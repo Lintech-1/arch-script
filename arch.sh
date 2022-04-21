@@ -1,30 +1,37 @@
 #!/bin/bash
-# LOG version 1.4.8
+# LOG version 1.4.9
 # author: Keper#6769
-# YouTube - https://www.youtube.com/c/Lintech8
+# YouTube: https://www.youtube.com/c/Lintech8
+# Codeberg: https://codeberg.org/Lintech
+# github: https://github.com/Lintech-1/arch-script/
 #--------------------------------------------------------------------------------------
-# - Добавленные пакеты gpm
-# - Добавлен выбор установки zsh
+# - добавлены новые ссылки
+# - изменём вывод текста в начале запуска скрипта
+# - добавлена задержка запуска команды на 5 секунд для echo 
 #--------------------------------------------------------------------------------------
-echo "Version 1.4.8
-██╗░░░░░██╗███╗░░██╗████████╗███████╗░█████╗░██╗░░██╗
-██║░░░░░██║████╗░██║╚══██╔══╝██╔════╝██╔══██╗██║░░██║
-██║░░░░░██║██╔██╗██║░░░██║░░░█████╗░░██║░░╚═╝███████║
-██║░░░░░██║██║╚████║░░░██║░░░██╔══╝░░██║░░██╗██╔══██║
-███████╗██║██║░╚███║░░░██║░░░███████╗╚█████╔╝██║░░██║
-╚══════╝╚═╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝░╚════╝░╚═╝░░╚═╝
+echo "Version 1.4.9
+░██████╗███████╗████████╗██╗░░░██╗██████╗░
+██╔════╝██╔════╝╚══██╔══╝██║░░░██║██╔══██╗
+╚█████╗░█████╗░░░░░██║░░░██║░░░██║██████╔╝
+░╚═══██╗██╔══╝░░░░░██║░░░██║░░░██║██╔═══╝░
+██████╔╝███████╗░░░██║░░░╚██████╔╝██║░░░░░
+╚═════╝░╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝░░░░░
 "
 
 echo "update key"
+sleep 5
 sudo pacman -Sy archlinux-keyring
 
-echo "install update" 
+echo "install update"
+sleep 5 
 sudo pacman -Syu nano
 
 echo "miltulib"
+sleep 5
 sudo nano /etc/pacman.conf
 
 echo "install soft"
+sleep 5
 sudo pacman -Sy discord m4 git wget curl flameshot zsh mpv telegram-desktop pavucontrol chromium neofetch python-gobject noto-fonts-cjk noto-fonts-emoji ttf-joypixels libmtp fuse3 mtpfs gvfs-mtp gpm
 
 echo "вы хотите установить pipewire?
@@ -41,6 +48,7 @@ elif [[ "$VAR" == 2 ]]; then
 fi
 
 echo "install yay"
+sleep 5
 mkdir file
 cd file
 sudo pacman -S --needed base-devel
